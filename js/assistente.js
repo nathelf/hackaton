@@ -41,6 +41,34 @@
         return 'Sua situação atual no semestre:<br><br>' + linhas.join('<br>');
     }
 
+    function respostaHorarios() {
+        var rotina = window.dadosAluno && window.dadosAluno.rotina;
+        if (!rotina) return 'Não encontrei dados de rotina. Informe seus horários disponíveis para que eu monte um plano personalizado.';
+        var linhas = rotina.blocos.map(function (b) {
+            return '<tr>' +
+                '<td><span class="label label-default">' + b.dia + ' ' + b.hora + '</span></td>' +
+                '<td style="padding-left:8px">' + b.topico + '</td>' +
+            '</tr>';
+        }).join('');
+        return '<div class="panel panel-default chat-panel">' +
+            '<div class="panel-heading"><strong><i class="fa fa-clock-o"></i> Plano de Estudos Personalizado</strong></div>' +
+            '<div class="panel-body">' +
+                '<p style="font-size:12px;color:#777;margin-bottom:8px;">' +
+                    '<i class="fa fa-briefcase"></i> Sei que você trabalha à <strong>' + rotina.trabalho + '</strong> — ' +
+                    'agendei blocos de estudo nos seus horários livres.' +
+                '</p>' +
+                '<table class="table table-condensed" style="margin-bottom:0;font-size:12px;"><tbody>' +
+                    linhas +
+                '</tbody></table>' +
+            '</div>' +
+            '<div class="panel-footer chat-panel-footer">' +
+                '<button class="btn btn-sm btn-success btn-acao-plano">' +
+                    '<i class="fa fa-calendar-plus-o"></i> Confirmar no Google Agenda' +
+                '</button>' +
+            '</div>' +
+        '</div>';
+    }
+
     function respostaSimular() {
         if (!window.dadosAluno) return 'Não consegui acessar os dados do sistema.';
         var linhas = window.dadosAluno.disciplinas.map(function (d) {
@@ -63,6 +91,10 @@
     ];
 
     var RESPOSTAS = [
+        {
+            palavras: ['horario', 'horários', 'estudo', 'estudar', 'plano de estudo', 'rotina', 'trabalho', 'agenda'],
+            responder: respostaHorarios
+        },
         {
             palavras: ['falta', 'faltas', 'quantas'],
             responder: respostaFaltas
@@ -287,6 +319,17 @@
                         '</div>',
                         'bot'
                     );
+
+                    // Mensagem 3: plano de horários respeitando a rotina de trabalho
+                    if (window.dadosAluno && window.dadosAluno.rotina) {
+                        setTimeout(function () {
+                            mostrarDigitando();
+                            setTimeout(function () {
+                                removerDigitando();
+                                adicionarMensagem(respostaHorarios(), 'bot');
+                            }, 900);
+                        }, 900);
+                    }
                 }, 1000);
             }, 600);
         }, 400);

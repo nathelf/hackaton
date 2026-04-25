@@ -144,6 +144,7 @@
                 <button class="btn btn-xs btn-default quick-reply-btn" data-pergunta="Quantas faltas ainda posso ter?">Quantas faltas ainda posso ter?</button>
                 <button class="btn btn-xs btn-default quick-reply-btn" data-pergunta="Qual minha situação atual?">Qual minha situação atual?</button>
                 <button class="btn btn-xs btn-default quick-reply-btn" data-pergunta="Simular nota final">Simular nota final</button>
+                <button class="btn btn-xs btn-default quick-reply-btn" data-pergunta="Ver meu plano de estudos">&#128197; Ver meu plano de estudos</button>
             </div>
             <form id="chat-form" autocomplete="off">
                 <div class="chat-input-group">
@@ -165,6 +166,16 @@
 /* Mock de integração com a API da Universidade */
 var dadosAluno = {
     aluno: "Vinicius",
+    rotina: {
+        trabalho: "tarde",
+        horarios_livres: ["manhã (até 07:30)", "noite (após 21:00)"],
+        blocos: [
+            { dia: "Seg", hora: "07:00-07:30", topico: "Revisão: Escoamento em Tubulações" },
+            { dia: "Ter", hora: "21:00-21:30", topico: "Exercícios: Bombas Hidráulicas"    },
+            { dia: "Qua", hora: "21:00-21:30", topico: "Revisão geral + simulado P2"       },
+            { dia: "Sex", hora: "21:00-22:00", topico: "Prática: exercícios de fixação"    }
+        ]
+    },
     disciplinas: [
         {
             nome: "Hidráulica",
