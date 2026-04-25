@@ -572,6 +572,29 @@
         construirSidebar();
         mensagensProativas();
 
+        // --- Sidebar mobile toggle ---
+        var btnToggle = document.getElementById('btn-toggle-sidebar');
+        var sidebar   = document.querySelector('.assistente-sidebar');
+        var overlay   = document.getElementById('sidebar-overlay');
+
+        function abrirSidebar()  {
+            if (sidebar) sidebar.classList.add('sidebar-aberta');
+            if (overlay) overlay.classList.add('ativo');
+        }
+        function fecharSidebar() {
+            if (sidebar) sidebar.classList.remove('sidebar-aberta');
+            if (overlay) overlay.classList.remove('ativo');
+        }
+
+        if (btnToggle) btnToggle.addEventListener('click', abrirSidebar);
+        if (overlay)   overlay.addEventListener('click', fecharSidebar);
+        if (sidebar) {
+            sidebar.addEventListener('click', function (ev) {
+                var alvo = ev.target.closest ? ev.target.closest('.btn-acao') : null;
+                if (alvo) fecharSidebar();
+            });
+        }
+
         var form    = document.getElementById('chat-form');
         var input   = document.getElementById('chat-input');
         var sendBtn = form.querySelector('button[type="submit"]');
