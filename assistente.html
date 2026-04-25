@@ -92,11 +92,19 @@
 
         <div class="sidebar-section">
             <div class="sidebar-section-title">Disciplinas ativas</div>
-            <ul class="sidebar-list">
-                <li><i class="fa fa-book"></i> Estruturas de Dados</li>
-                <li><i class="fa fa-book"></i> Processo de Eng. de Software I</li>
-                <li><i class="fa fa-book"></i> Sistemas Administrativos</li>
+            <ul class="sidebar-list" id="sidebar-disciplinas">
+                <!-- Populado pelo JS a partir de dadosAluno -->
             </ul>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">Termômetro do Semestre</div>
+            <div class="progress sidebar-progress">
+                <div class="progress-bar progress-bar-success" id="barra-ok"      style="width:0%"></div>
+                <div class="progress-bar progress-bar-warning" id="barra-atencao" style="width:0%"></div>
+                <div class="progress-bar progress-bar-danger"  id="barra-risco"   style="width:0%"></div>
+            </div>
+            <div class="sidebar-progress-legend" id="sidebar-legend"></div>
         </div>
 
         <div class="sidebar-section">
@@ -128,17 +136,15 @@
         </div>
 
         <div class="chat-messages" id="chat-messages">
-            <div class="chat-msg chat-msg-bot">
-                <div class="chat-avatar"><i class="fa fa-graduation-cap"></i></div>
-                <div class="chat-bubble">
-                    Olá! Sou o Assistente Virtual Acadêmico integrado ao Academus.<br>
-                    Posso te ajudar com informações sobre notas, horários, avaliações, matrícula e muito mais.<br><br>
-                    Como posso te ajudar hoje?
-                </div>
-            </div>
+            <!-- Mensagens geradas pelo JS a partir dos dados do aluno -->
         </div>
 
         <div class="chat-input-bar">
+            <div class="quick-replies" id="quick-replies">
+                <button class="btn btn-xs btn-default quick-reply-btn" data-pergunta="Quantas faltas ainda posso ter?">Quantas faltas ainda posso ter?</button>
+                <button class="btn btn-xs btn-default quick-reply-btn" data-pergunta="Qual minha situação atual?">Qual minha situação atual?</button>
+                <button class="btn btn-xs btn-default quick-reply-btn" data-pergunta="Simular nota final">Simular nota final</button>
+            </div>
             <form id="chat-form" autocomplete="off">
                 <div class="chat-input-group">
                     <input type="text" id="chat-input" class="chat-input" placeholder="Digite sua pergunta..." maxlength="500">
@@ -154,6 +160,70 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<script>
+/* Mock de integração com a API da Universidade */
+var dadosAluno = {
+    aluno: "Vinicius",
+    disciplinas: [
+        {
+            nome: "Hidráulica",
+            nota_p1: 4.2,
+            faltas: 6,
+            faltas_max: 15,
+            nota_necessaria_p2: 7.8,
+            risco: "alto",
+            topicos_fracos: ["Escoamento em Tubulações", "Bombas Hidráulicas"]
+        },
+        {
+            nome: "Projetos Integrados",
+            nota_p1: 6.0,
+            faltas: 10,
+            faltas_max: 15,
+            nota_necessaria_p2: 6.0,
+            risco: "medio",
+            topicos_fracos: []
+        },
+        {
+            nome: "Estruturas Metálicas",
+            nota_p1: 7.5,
+            faltas: 2,
+            faltas_max: 15,
+            nota_necessaria_p2: 4.5,
+            risco: "baixo",
+            topicos_fracos: []
+        },
+        {
+            nome: "Racionalização de Energia e Instrumentação",
+            nota_p1: 8.0,
+            faltas: 0,
+            faltas_max: 15,
+            nota_necessaria_p2: 4.0,
+            risco: "baixo",
+            topicos_fracos: []
+        },
+        {
+            nome: "Administração Rural",
+            nota_p1: 7.0,
+            faltas: 4,
+            faltas_max: 15,
+            nota_necessaria_p2: 5.0,
+            risco: "baixo",
+            topicos_fracos: []
+        },
+        {
+            nome: "Projetos de Sistemas Energéticos Renováveis",
+            nota_p1: 6.5,
+            faltas: 3,
+            faltas_max: 15,
+            nota_necessaria_p2: 5.5,
+            risco: "baixo",
+            topicos_fracos: []
+        }
+    ]
+};
+</script>
+
 <script src="js/assistente.js"></script>
 
 </body>

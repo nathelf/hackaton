@@ -4,8 +4,9 @@
 
 // Credenciais mockadas (sistema legado de exemplo)
 var USUARIOS_VALIDOS = [
-    { usuario: "rodrigo.rosa7", senha: "123456", nome: "Rodrigo", ra: "220560" },
-    { usuario: "admin",         senha: "admin",  nome: "Administrador", ra: "000001" }
+    { usuario: "rodrigo.rosa7", senha: "123456", nome: "Rodrigo",        ra: "220560" },
+    { usuario: "vinicius",      senha: "123456", nome: "Vinicius",       ra: "287554" },
+    { usuario: "admin",         senha: "admin",  nome: "Administrador",  ra: "000001" }
 ];
 
 document.addEventListener('DOMContentLoaded', function () {

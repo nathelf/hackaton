@@ -278,7 +278,7 @@ body {
 
 .assistente-wrap {
     display: flex;
-    height: calc(100vh - 50px);
+    height: calc(100vh - 70px);
     margin-top: 0;
 }
 
@@ -540,4 +540,93 @@ body {
 
 .chat-send-btn:hover {
     background: #5a4170;
+}
+
+/* Termômetro do semestre */
+.sidebar-progress {
+    margin-bottom: 6px;
+    border-radius: 3px;
+    height: 14px;
+}
+
+.sidebar-progress-legend {
+    font-size: 11px;
+    display: flex;
+    gap: 8px;
+}
+
+.sidebar-progress-legend .text-success { color: #3c763d; }
+.sidebar-progress-legend .text-warning { color: #8a6d3b; }
+.sidebar-progress-legend .text-danger  { color: #a94442; }
+
+/* Ícones de status na lista de disciplinas */
+.sidebar-list li .text-danger  { color: #a94442; }
+.sidebar-list li .text-warning { color: #8a6d3b; }
+.sidebar-list li .text-success { color: #3c763d; }
+
+/* Quick replies */
+.quick-replies {
+    padding: 8px 16px 4px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.quick-reply-btn {
+    border-radius: 12px !important;
+    color: #5a4170 !important;
+    border-color: #c8b8d8 !important;
+    background: #f7f4fa !important;
+    font-size: 12px !important;
+    padding: 3px 10px !important;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.quick-reply-btn:hover {
+    background: #ede8f4 !important;
+}
+
+/* Mensagem "wide" para cards e alertas */
+.chat-msg-wide {
+    max-width: 88%;
+}
+
+/* Bubble sem estilo próprio quando contém card/alert */
+.chat-bubble-card {
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+}
+
+/* Panel dentro do chat */
+.chat-panel {
+    margin-bottom: 0;
+    font-size: 13px;
+    min-width: 320px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.chat-panel .panel-heading {
+    background: #f7f4fa;
+    color: #4a3060;
+    border-bottom-color: #e0d8e8;
+}
+
+.chat-panel-footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    background: #fafafa;
+    padding: 10px 12px;
+}
+
+/* Alert dentro do chat */
+.chat-alert {
+    margin-bottom: 0;
+    font-size: 13px;
+    border-radius: 8px;
+    min-width: 320px;
 }
