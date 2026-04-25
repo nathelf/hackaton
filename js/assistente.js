@@ -5,7 +5,7 @@
 (function () {
 
     // Coloque aqui sua chave do Groq (https://console.groq.com/keys)
-    var GROQ_API_KEY = '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';
+    var GROQ_API_KEY = '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';
 
     var GROQ_ENDPOINT = 'https://api.groq.com/openai/v1/chat/completions';
     var GROQ_MODEL    = 'llama-3.3-70b-versatile';
