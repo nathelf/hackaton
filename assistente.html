@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Assistente Virtual Acadêmico - Academus</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/dashboard.js"></script>
+</head>
+<body class="body-dashboard body-assistente">
+
+<!-- Navbar superior -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header" style="float:left;">
+            <button type="button" class="navbar-hamburguer">
+                <span class="sr-only">Menu</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <button type="button" class="navbar-btn-icon" style="float:left; margin-left:5px;">
+                <i class="fa fa-envelope-o"></i>
+            </button>
+            <a class="navbar-brand navbar-brand-academus" href="dashboard.html">
+                <span class="navbar-logo-mini">
+                    <span class="arcs"></span>
+                    <span class="dot"></span>
+                </span>
+                Academus
+            </a>
+        </div>
+
+        <ul class="nav navbar-nav">
+            <li><a href="dashboard.html">Início</a></li>
+            <li><a href="#">Acadêmico</a></li>
+            <li><a href="#">Matrículas</a></li>
+            <li><a href="#">Histórico</a></li>
+            <li><a href="#">Relatórios</a></li>
+            <li><a href="#">AVA NEADUNI</a></li>
+            <li class="active"><a href="assistente.html"><i class="fa fa-comments-o"></i> Assistente Virtual Acadêmico</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mais <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Opção 1</a></li>
+                    <li><a href="#">Opção 2</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <button type="button" class="navbar-btn-icon" style="margin-top:13px; margin-right:6px;">
+                    <i class="fa fa-envelope-o"></i>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="navbar-btn-icon" style="margin-top:13px; margin-right:10px;">
+                    <i class="fa fa-question-circle-o"></i>
+                </button>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle navbar-right-user" data-toggle="dropdown" id="user-label">
+                    Carregando... <span class="caret caret-usuario"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Perfil</a></li>
+                    <li><a href="#">Configurações</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#" id="btn-logout"><i class="fa fa-sign-out"></i> Sair</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Layout do Assistente -->
+<div class="assistente-wrap">
+
+    <!-- Sidebar -->
+    <div class="assistente-sidebar">
+        <div class="sidebar-header">
+            <i class="fa fa-user-circle-o"></i>
+            <span id="sidebar-nome">Carregando...</span>
+            <small id="sidebar-ra"></small>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">Disciplinas ativas</div>
+            <ul class="sidebar-list">
+                <li><i class="fa fa-book"></i> Estruturas de Dados</li>
+                <li><i class="fa fa-book"></i> Processo de Eng. de Software I</li>
+                <li><i class="fa fa-book"></i> Sistemas Administrativos</li>
+            </ul>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">Ações rápidas</div>
+            <button class="btn btn-acao" data-pergunta="Quais são minhas próximas aulas?">
+                <i class="fa fa-calendar"></i> Próximas aulas
+            </button>
+            <button class="btn btn-acao" data-pergunta="Como estão minhas notas?">
+                <i class="fa fa-star"></i> Minhas notas
+            </button>
+            <button class="btn btn-acao" data-pergunta="Quais são as próximas avaliações?">
+                <i class="fa fa-pencil"></i> Avaliações
+            </button>
+            <button class="btn btn-acao" data-pergunta="Como faço o requerimento de matrícula?">
+                <i class="fa fa-file-text-o"></i> Requerimento
+            </button>
+            <button class="btn btn-acao" data-pergunta="Qual é meu histórico acadêmico?">
+                <i class="fa fa-graduation-cap"></i> Histórico
+            </button>
+        </div>
+    </div>
+
+    <!-- Área de chat -->
+    <div class="assistente-chat">
+        <div class="chat-topbar">
+            <i class="fa fa-comments-o"></i>
+            <strong>Assistente Virtual Acadêmico</strong>
+            <span class="chat-status"><span class="chat-status-dot"></span> Online</span>
+        </div>
+
+        <div class="chat-messages" id="chat-messages">
+            <div class="chat-msg chat-msg-bot">
+                <div class="chat-avatar"><i class="fa fa-graduation-cap"></i></div>
+                <div class="chat-bubble">
+                    Olá! Sou o Assistente Virtual Acadêmico integrado ao Academus.<br>
+                    Posso te ajudar com informações sobre notas, horários, avaliações, matrícula e muito mais.<br><br>
+                    Como posso te ajudar hoje?
+                </div>
+            </div>
+        </div>
+
+        <div class="chat-input-bar">
+            <form id="chat-form" autocomplete="off">
+                <div class="chat-input-group">
+                    <input type="text" id="chat-input" class="chat-input" placeholder="Digite sua pergunta..." maxlength="500">
+                    <button type="submit" class="chat-send-btn">
+                        <i class="fa fa-paper-plane"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="js/assistente.js"></script>
+
+</body>
+</html>

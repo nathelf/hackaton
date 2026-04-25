@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Login - Unioeste</title>
+
+    <!-- Bootstrap 3.x -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- FontAwesome 4.x -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Estilos do projeto -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container" style="padding-top:70px">
+    <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+
+        <!-- Cabeçalho com logo -->
+        <div class="logo-unioeste">
+            <div class="logo-arcs"></div>
+            <div class="logo-name">unioeste</div>
+            <div class="logo-sub">Universidade Estadual do Oeste do Paraná</div>
+        </div>
+
+        <!-- Painel de login -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><strong>Login</strong></h3>
+            </div>
+
+            <div class="panel-body">
+                <form id="form-login" role="form" name="form">
+
+                    <!-- Área de mensagens -->
+                    <div id="alert-box"></div>
+
+                    <div style="margin-bottom: 12px" class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input id="login-username" type="text" class="form-control" name="username" placeholder="usuário/login ou cpf" required autocomplete="username">
+                    </div>
+
+                    <div style="margin-bottom: 12px" class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input id="login-password" type="password" class="form-control" name="password" placeholder="senha" required autocomplete="current-password">
+                        <span class="input-group-btn">
+                            <button id="btn-toggle-password" type="button" class="btn btn-default">
+                                <i id="eyeIcon" class="fa eyeIcon fa-eye"></i>
+                            </button>
+                        </span>
+                    </div>
+
+                    <div class="form-group">
+
+                        <div class="checkbox" style="margin-top: 0px;">
+                            <label>
+                                <input id="login-remember" type="checkbox" name="remember" value="1"> Lembrar meu usuário
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-success">
+                            <span>Entrar</span>
+                        </button>
+
+                        <div class="pull-right text-right" style="font-size: smaller;">
+                            <a href="#">Esqueci a senha/usuário</a><br>
+                            <a href="#" class="btn btn-primary btn-xs">Criar conta</a>
+                        </div>
+
+                    </div>
+
+                    <hr class="login-hr">
+
+                    <div style="font-size:smaller;" class="text-center">
+                        <p style="color: gray;">
+                            <a href="#" style="color: gray;">Ajuda</a> |
+                            <a href="#" style="color: gray;">Documentos</a> |
+                            <a href="#" style="color: gray;">Sistemas</a> |
+                            <a href="#" style="color: gray;">Termos</a> |
+                            <a href="#" style="color: gray;">Sobre</a>
+                        </p>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <!-- Rodapé -->
+        <div class="footer-sistemas">
+            <a href="#">unioeste.br/<b>sistemas</b></a>
+        </div>
+
+    </div>
+</div>
+
+<!-- Scripts -->
+<script src="js/login.js"></script>
+
+</body>
+</html>

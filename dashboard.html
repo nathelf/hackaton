@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Academus - Unioeste</title>
+
+    <!-- Bootstrap 3.x -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- FontAwesome 4.x -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Estilos do projeto -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Proteção de rota: executa ANTES do render para evitar flash -->
+    <script src="js/dashboard.js"></script>
+</head>
+<body class="body-dashboard">
+
+<!-- Navbar superior -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header" style="float:left;">
+            <button type="button" class="navbar-hamburguer">
+                <span class="sr-only">Menu</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <button type="button" class="navbar-btn-icon" style="float:left; margin-left:5px;">
+                <i class="fa fa-envelope-o"></i>
+            </button>
+            <a class="navbar-brand navbar-brand-academus" href="dashboard.html">
+                <span class="navbar-logo-mini">
+                    <span class="arcs"></span>
+                    <span class="dot"></span>
+                </span>
+                Academus
+            </a>
+        </div>
+
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="dashboard.html">Início</a></li>
+            <li><a href="#">Acadêmico</a></li>
+            <li><a href="#">Matrículas</a></li>
+            <li><a href="#">Histórico</a></li>
+            <li><a href="#">Relatórios</a></li>
+            <li><a href="#">AVA NEADUNI</a></li>
+            <li><a href="assistente.html"><i class="fa fa-comments-o"></i> Assistente Virtual Acadêmico</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mais <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Opção 1</a></li>
+                    <li><a href="#">Opção 2</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <button type="button" class="navbar-btn-icon" style="margin-top:13px; margin-right:6px;">
+                    <i class="fa fa-envelope-o"></i>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="navbar-btn-icon" style="margin-top:13px; margin-right:10px;">
+                    <i class="fa fa-question-circle-o"></i>
+                </button>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle navbar-right-user" data-toggle="dropdown" id="user-label">
+                    Carregando... <span class="caret caret-usuario"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Perfil</a></li>
+                    <li><a href="#">Configurações</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#" id="btn-logout"><i class="fa fa-sign-out"></i> Sair</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Conteúdo principal -->
+<div class="container-fluid">
+    <div class="col-md-10 col-md-offset-1">
+
+        <!-- Botão de requerimento de matrícula -->
+        <div style="text-align:center;">
+            <button id="btn-matricula" type="button" class="btn btn-primary top-btn-matricula">
+                Módulo de Requerimento de Matrícula
+            </button>
+        </div>
+
+        <div class="row">
+
+            <!-- Painel 1: Últimas Notas -->
+            <div class="col-sm-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="panel-title-center">Últimas Notas</div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="painel-vazio">nenhum registro</div>
+                        <div class="painel-rodape">Lista das últimas 5 notas registradas</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Painel 2: Próximas Aulas -->
+            <div class="col-sm-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="panel-title-center">Próximas Aulas</div>
+                    </div>
+                    <div class="panel-body">
+
+                        <div class="aula-item">
+                            <span class="label label-success label-data">
+                                <span class="dia">Hoje</span>
+                                <span class="hora">09:50</span>
+                            </span>
+                            <strong>Estruturas de dados</strong> - Docente(s): Leonardo Medeiros<br>
+                            24/04/26 09:50-11:30
+                        </div>
+
+                        <div class="aula-item">
+                            <span class="label label-default label-data">
+                                <span class="dia">Seg</span>
+                                <span class="hora">15:20</span>
+                            </span>
+                            <strong>Processo de Engenharia de Software I</strong> - Docente(s): Victor Francisco Araya Santander<br>
+                            27/04/26 15:20-17:00
+                        </div>
+
+                        <div class="aula-item">
+                            <span class="label label-default label-data">
+                                <span class="dia">Ter</span>
+                                <span class="hora">08:00</span>
+                            </span>
+                            <strong>Sistemas Administrativos</strong> - Docente(s): Claudio Antonio Rojo<br>
+                            28/04/26 08:00-11:30
+                        </div>
+
+                        <div class="aula-item">
+                            <span class="label label-default label-data">
+                                <span class="dia">Ter</span>
+                                <span class="hora">15:20</span>
+                            </span>
+                            <strong>Processo de Engenharia de Software I</strong> - Docente(s): Victor Francisco Araya Santander<br>
+                            28/04/26 15:20-17:00
+                        </div>
+
+                        <div class="aula-item">
+                            <span class="label label-default label-data">
+                                <span class="dia">Qui</span>
+                                <span class="hora">08:00</span>
+                            </span>
+                            <strong>Estruturas de dados</strong> - Docente(s): Leonardo Medeiros<br>
+                            30/04/26 08:00-09:40
+                        </div>
+
+                        <div class="painel-rodape">Lista das aulas dos próximos 7 dias</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Painel 3: Próximas Avaliações -->
+            <div class="col-sm-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="panel-title-center">Próximas Avaliações</div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="painel-vazio">nenhum registro</div>
+                        <div class="painel-rodape">Lista das próximas 10 avaliações</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<!-- jQuery + Bootstrap JS para dropdowns -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>
