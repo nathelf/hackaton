@@ -555,6 +555,117 @@ body {
     gap: 8px;
 }
 
+/* ==========================================================================
+   QUIZ ESTILO DUOLINGO
+   ========================================================================== */
+.quiz-wrap {
+    width: 100%;
+    font-size: 13px;
+}
+
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #ede8f4;
+    font-size: 14px;
+    color: #5a4170;
+}
+
+.quiz-score {
+    background: #6E5380;
+    color: #fff;
+    border-radius: 12px;
+    padding: 2px 10px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.quiz-q {
+    margin-bottom: 16px;
+}
+
+.quiz-pergunta-texto {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.quiz-opcoes {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.quiz-opcao {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f7f4fa;
+    border: 2px solid #ddd6ea;
+    border-radius: 8px;
+    padding: 8px 12px;
+    text-align: left;
+    font-size: 13px;
+    color: #333;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s, transform 0.1s;
+    width: 100%;
+}
+
+.quiz-opcao:hover:not(:disabled) {
+    background: #ede8f4;
+    border-color: #6E5380;
+    transform: translateX(3px);
+}
+
+.quiz-opcao:disabled {
+    cursor: default;
+}
+
+.quiz-opcao.quiz-correta {
+    background: #d4edda;
+    border-color: #28a745;
+    color: #155724;
+}
+
+.quiz-opcao.quiz-errada {
+    background: #f8d7da;
+    border-color: #dc3545;
+    color: #721c24;
+}
+
+.quiz-letra {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    height: 24px;
+    background: #6E5380;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.quiz-opcao.quiz-correta .quiz-letra { background: #28a745; }
+.quiz-opcao.quiz-errada  .quiz-letra { background: #dc3545; }
+
+.quiz-feedback {
+    margin-top: 6px;
+    padding: 7px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.quiz-fb-ok  { background: #d4edda; color: #155724; border-left: 3px solid #28a745; }
+.quiz-fb-err { background: #f8d7da; color: #721c24; border-left: 3px solid #dc3545; }
+
 .sidebar-progress-legend .text-success { color: #3c763d; }
 .sidebar-progress-legend .text-warning { color: #8a6d3b; }
 .sidebar-progress-legend .text-danger  { color: #a94442; }
