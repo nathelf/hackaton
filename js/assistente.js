@@ -1,18 +1,15 @@
-/* ==========================================================================
    Assistente Virtual Acadêmico - Chat com Groq AI + Análise Proativa
-   ========================================================================== */
 
 (function () {
 
     // Coloque aqui sua chave do Groq (https://console.groq.com/keys)
-    var GROQ_API_KEY = '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';
+
+    var GROQ_API_KEY = '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';
 
     var GROQ_ENDPOINT = 'https://api.groq.com/openai/v1/chat/completions';
     var GROQ_MODEL    = 'llama-3.3-70b-versatile';
 
-    // =========================================================
     // PERSONALIZE O COMPORTAMENTO DA IA AQUI
-    // =========================================================
     var SYSTEM_PROMPT =
         'Você é o Uni, assistente virtual acadêmico oficial do sistema Academus da Unioeste ' +
         '(Universidade Estadual do Oeste do Paraná).' +
@@ -43,7 +40,6 @@
         'Use sempre: títulos em <strong>negrito</strong>, listas com •, exemplos concretos. ' +
         'Mínimo de 3 parágrafos ou seções por resposta. ' +
         'Termine sempre com uma dica extra ou próximo passo sugerido.';
-    // =========================================================
 
     // ---------- Dados das aulas ----------
 
